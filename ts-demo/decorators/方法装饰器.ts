@@ -38,6 +38,10 @@ class Stu{
     static sayHi(){
         console.log('你好')
     }
+
+    get name(){
+
+    }
 }
 console.log(Stu.prototype);
 

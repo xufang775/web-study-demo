@@ -20,6 +20,10 @@ class Stu{
     sayHi(){
 
     }
+
+    get age(){
+        return 18;
+    }
 }
 const s = new Stu();
 console.log(s.say('哈哈'));
