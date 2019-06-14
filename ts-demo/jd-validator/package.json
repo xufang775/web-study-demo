@@ -1,0 +1,26 @@
+{
+  "name": "jd-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "dev": "npx webpack-dev-server --mode development --content-base ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.117",
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.1.3",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "loadsh": "0.0.3",
+    "lodash": "^4.17.11"
+  }
+}
