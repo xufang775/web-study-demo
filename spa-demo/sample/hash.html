@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用hash驱动界面变化</title>
+    <style>
+        body {
+            height: 500px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            font-size: 500px;
+            text-align: center;
+            display: none;
+        }
+        .a {
+            background-color: pink;
+            display: block;
+        }
+        .b {
+            background-color: red;
+        }
+        .c {
+            background-color: gray;
+        }
+    </style>
+
+</head>
+<body>
+<div id="A" class="a J-A">A</div>
+<div id="B" class="b J-B">B</div>
+<div id="C" class="c J-C">C</div>
+<script>
+    function hashChanged(hashObj) {
+        // 变化之后的url
+        var newhash = hashObj.newURL.split('#')[1];
+        // 变化之前的url
+        var oldhash = hashObj.oldURL.split('#')[1];
+        // 将对应的hash下界面显示和隐藏
+        document.getElementById(oldhash).style.display = 'none';
+        document.getElementById(newhash).style.display = 'block';
+    }
+    window.onhashchange = hashChanged;
+</script>
+</body>
+
+</html>
