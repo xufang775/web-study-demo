@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>利用history实现无刷新跳转界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://zeptojs.com/zepto.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="history.css">
+</head>
+<body>
+    <div class="a"><p>What we talk about when we talk about love</p><span>A</span></div>
+    <div class="b none"><p>Quell nous sommes parlons lorsqur nous parlons d'amour</p><span>B</span></div>
+    <div class="c none"><p>当我们在談論爱情的时候，我们在談論些什么</p><span>C</span></div>
+    <button class="forward">FORWARD</button>
+<script>
+    //首先给history添加一条记录，使得第一个界面和后来的界面看起来是永远的以page=x结尾
+    window.history.pushState({info:'a'}, 'Page', '?page=a');
+    //数据源
+    var source = [
+            {cls:'a', url:'?page=a'},
+            {cls:'b', url:'?page=b'},
+            {cls:'c', url:'?page=c'}
+        ],
+//数据源的下表，
+        k = 0,
+//界面涨势的属性列表
+        index = ['a', 'b', 'c'],
+//记录每个界面跳转的顺序的列表
+        stoage = [];
+
+    //绑定按钮的tap事件，我们在移动端做测试，用的是tap，zepto会帮我们转译该事件
+    $('.forward').on('click', function(){
+        if(source[k]) {
+            //取下一个界面的数据源
+            var m = source[++k];
+            //在这里填充history记录，pushstate是方法是不会引起界面刷新的，但是却会改变浏览器的回退/前进行为，执行这一步的时候可以看到地址栏中的url变化了。
+            window.history.pushState({info:m.cls}, 'Page', m.url);
+            //储存该节目名称到stoage列表中
+            stoage.push(window.history.state.info);
+            //下面是切换的动画，因为这里力求简单做的是一直向前走的动作，所以动画是从右到左的切换顺序
+            $('.' + m.cls).removeClass('none').addClass("animatestart sliderightin");
+            setTimeout(function(){ //动画结束时重置class
+                $('.'+ source[k -1].cls).addClass('none');
+                $('.' + m.cls).removeClass('animatestart sliderightin');
+            }, 350);
+        }
+    })
+
+    //利用stoage的存储和index列表中的先后规则，放回动画翻转顺，是从左到右，还是从右到左
+    function j() {
+        var l = stoage.length;
+        if(index.indexOf(stoage[l-2]) < index.indexOf(stoage[l-1])) {
+            return 'animatestart sliderightin';
+        }else{
+            return 'animatestart slideleftin';
+        }
+    }
+    //开始监听浏览器的前进/后退行为
+    $(window).on('popstate', function(state) {
+        //移除按钮
+        $('.forward').remove();
+        //将本界面名称存入stoage列表中
+        stoage.push(window.history.state.info);
+        //取得上一个界面的名称
+        var thiscls = stoage[stoage.length - 2];
+        //取得当前界面的名称
+        var nextcls = stoage[stoage.length - 1];
+        //对比两个界面获得动画效果
+        var cls = j();
+        //执行动画效果
+        $('.' + nextcls).removeClass('none').addClass(cls);
+        setTimeout(function(){ //动画结束时重置clas
+            $('.'+ thiscls).addClass('none');
+            $('.' + nextcls).removeClass(cls);
+        }, 350);
+
+    });
+</script>
+</body>
+</html>
