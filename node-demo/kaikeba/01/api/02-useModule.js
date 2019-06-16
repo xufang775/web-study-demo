@@ -18,5 +18,5 @@ const showStat = async() =>{
     const mem = os.freemem() / os.totalmem * 100
     console.log(`内存占用${mem.toFixed(2)}%`)
     const percent = await getCpu()
-    console.log(`CPU占用:${percent.toFixed(2)}%`)
+    // console.log(`CPU占用:${percent.toFixed(2)}%`)
 }
