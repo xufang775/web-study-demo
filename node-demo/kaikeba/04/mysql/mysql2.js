@@ -6,5 +6,14 @@ setTimeout(async ()=>{
         password:'123123',
         database:'kaikeba'
     }
+    const create_sql = ``;
+
+
+    const connection = await mysql.createConnection(cfg);
+
+    let ret = await connection.excu
+
+
+
 });
 
