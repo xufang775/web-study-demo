@@ -14,6 +14,7 @@ const server = http.createServer((req,res)=>{
         const outputFile = path.resolve(__dirname,filename);
         console.log(outputFile);
         const fis = fs.createWriteStream(outputFile);
+    
 
         // 最简单的事件流
         // req.pipe(fis);
@@ -33,7 +34,7 @@ const server = http.createServer((req,res)=>{
         //     fs.writeFileSync(outputFile,buffer);
         //     res.end();
         // });
-        
+
         // 存入文件中
         req.on('data',data=>{
             console.log('data:',data);
