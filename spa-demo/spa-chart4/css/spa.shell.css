@@ -4,7 +4,7 @@ Shell styles
 */
 .spa-shell-head,.spa-shell-head-logo,.spa-shell-head-acct,
 .spa-shell-head-search,.spa-shell-main,.spa-shell-main-nav,
-.spa-shell-main-content,.spa-shell-foot,.spa-shell-chat,
+.spa-shell-main-content,.spa-shell-foot,/*.spa-shell-chat,*/
 .spa-shell-modal{
     position: absolute;
 }
@@ -67,6 +67,7 @@ Shell styles
     right: 0;
     height: 40px;
 }
+/*
 .spa-shell-chat{
     bottom: 0;
     right: 0;
@@ -77,6 +78,7 @@ Shell styles
     z-index: 1;
 }
 .spa-shell-chat:hover{background: #a00;}
+*/
 .spa-shell-modal{
     margin-top: -200px;
     margin-left: -200px;
@@ -87,4 +89,5 @@ Shell styles
     background: #ffffff;
     border-radius: 3px;
     z-index: 2;
+    display: none;
 }
