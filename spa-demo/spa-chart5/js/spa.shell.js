@@ -108,7 +108,6 @@ spa.shell = (function () {
     // Arguments:
     //      * arg_map - The map describing what part of the URI anchor we want changed
     onHashChange = function (event) {
-        debugger;
         var
             _s_chat_previous,_s_chat_proposed,s_chat_proposed,
             anchor_map_proposed,

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SPA Starter 4</title>
+    <link rel="stylesheet" href="css/spa.css">
+    <link rel="stylesheet" href="css/spa.chat.css">
+    <link rel="stylesheet" href="css/spa.shell.css">
+    <link rel="stylesheet" href="css/spa.avtr.css">
+
+    <script src="../node_modules/taffydb/taffy-min.js"></script>
+    <script src="js/jq/jquery-1.9.1.min.js"></script>
+    <script src="js/jq/jquery.uriAnchor.js"></script>
+    <script src="../node_modules/jquery.event.gevent/jquery.event.gevent.js"></script>
+    <script src="../node_modules/jquery.event.ue/jquery.event.ue.js"></script>
+
+    <script src="js/spa.js"></script>
+    <script src="js/spa.util.js"></script>
+    <script src="js/spa.data.js"></script>
+    <script src="js/spa.fake.js"></script>
+    <script src="js/spa.model.js"></script>
+    <script src="js/spa.util_b.js"></script>
+    <script src="js/spa.shell.js"></script>
+    <script src="js/spa.chat.js" charset="UTF-8"></script>
+    <script src="js/spa.avtr.js"></script>
+    <script>
+        $(function () {
+            // var friends = TAFFY([
+            //     {"id":1,"gender":"M","first":"John","last":"Smith","city":"Seattle, WA","status":"Active"},
+            //     {"id":2,"gender":"F","first":"Kelly","last":"Ruth","city":"Dallas, TX","status":"Active"},
+            //     {"id":3,"gender":"M","first":"Jeff","last":"Stevenson","city":"Washington, D.C.","status":"Active"},
+            //     {"id":4,"gender":"F","first":"Jennifer","last":"Gill","city":"Seattle, WA","status":"Active"}
+            // ]);
+            // var aa = TAFFY();
+            // aa.insert({id:1,name:'xufang'});
+            // var kelly = friends({id:2}).first();
+            // console.log(kelly);
+            // var aa1 = aa({id:1}).first();
+            // console.log(aa);
+
+
+            spa.initModule($('#spa'));
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div id="spa"></div>
+</body>
+</html>
