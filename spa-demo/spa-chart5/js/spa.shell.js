@@ -12,7 +12,10 @@ spa.shell = (function () {
             },
             main_html:`
              <div class="spa-shell-head">
-                <div class="spa-shell-head-logo"></div>
+                <div class="spa-shell-head-logo">
+                    <h1>SPA</h1>
+                    <p>javascript end to end</p>
+                </div>
                 <div class="spa-shell-head-acct"></div>
                 <div class="spa-shell-head-search"></div>
             </div>
@@ -34,7 +37,8 @@ spa.shell = (function () {
         },
         jqueryMap = {},
         copyAnchorMap,setJqueryMap,
-        changeAnchorPart, onHashChange, onResize,
+        changeAnchorPart, onHashChange,
+        onTapAcct,onLogin, onLogout, onResize,
         setChatAnchor, initModule;
     //---------------------- Begin Module scope variables------------------------------
 
@@ -51,6 +55,8 @@ spa.shell = (function () {
         var $container = stateMap.$container;
         jqueryMap = {
             $container:$container,
+            $acct: $container.find('.spa-shell-head-acct'),
+            $nav:$container.find('.spa-shell-main-nav')
             // $chat:$container.find('.spa-shell-chat')
         };
     };
@@ -176,6 +182,17 @@ spa.shell = (function () {
     };
     // End Event handler /onResize/
 
+    onTapAcct = function (event) {
+        var acct_text, user_name, user = spa.model.people.get_user();
+        if( user.get_is_anon()){
+            user_name = prompt( '请登录' );
+            spa.model.people.login( user_name );
+            jqueryMap.$acct.text( '... 加载中 ...' );
+        } else {
+            spa.model.people.logout();
+        }
+        return false;
+    };
     //-----------------------------End Event Handlers------------------------------
 
     //----------------------------------End Dom Methods----------------------------------
