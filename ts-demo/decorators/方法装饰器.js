@@ -43,6 +43,12 @@ var Stu = /** @class */ (function () {
     Stu.sayHi = function () {
         console.log('你好');
     };
+    Object.defineProperty(Stu.prototype, "name", {
+        get: function () {
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         LogMethod
     ], Stu.prototype, "say", null);

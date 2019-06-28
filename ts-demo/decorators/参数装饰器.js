@@ -28,6 +28,13 @@ var Stu = /** @class */ (function () {
     };
     Stu.prototype.sayHi = function () {
     };
+    Object.defineProperty(Stu.prototype, "age", {
+        get: function () {
+            return 18;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         __param(0, addMetada)
     ], Stu.prototype, "say", null);
