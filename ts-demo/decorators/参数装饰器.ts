@@ -9,11 +9,15 @@ function addMetada(target:any,key:string,index:number){
     const _metada = `addMetada ${key} index -- ${index}`;
     target['_metada'] = _metada;
 }
+function btnObj(target:any,key:string,index:number){
+    console.log(arguments);
+    console.log(target.say.arguments);
+}
 
 
 class Stu{
     name:string = '小明';
-    say(@addMetada logMsg:string){   // nest
+    say(@btnObj logMsg:string){   // nest
         console.log(logMsg);
         return logMsg;
     }
@@ -27,6 +31,6 @@ class Stu{
 }
 const s = new Stu();
 console.log(s.say('哈哈'));
-console.log(s);
-console.log(Stu.prototype);
+// console.log(s);
+// console.log(Stu.prototype);
 

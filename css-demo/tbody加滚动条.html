@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tbody加滚动条</title>
+    <style>
+        /*// 1. thead和tobdy设置table属性*/
+        .count-table thead tr,
+        .count-table tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        /*// 2. toby定高，使其可以滚动*/
+            .count-table table tbody{
+                /*display: block;*/
+                height: 100px;
+                overflow: auto;
+            }
+        /*// 3. 设置宽度，需要定宽，用百分比不可行，因为tobdy的滚动条会被计算宽度，让人费解的是mac下的chrome没有出现问题。*/
+        /*// 4. thead和tbody宽度一直，重点是最后一列不设宽度,还是由于滚动条的存在。本例中14列，只设置了13列的宽度*/
+        .count-table thead tr th:nth-child(1){
+                width: 141px;
+            }
+        .count-table thead tr th:nth-child(2),
+        .count-table thead tr th:nth-child(3),
+        .count-table thead tr th:nth-child(4),
+        .count-table thead tr th:nth-child(5),
+        .count-table thead tr th:nth-child(6),
+        .count-table thead tr th:nth-child(7),
+        .count-table thead tr th:nth-child(8),
+        .count-table thead tr th:nth-child(9),
+        .count-table thead tr th:nth-child(10),
+        .count-table thead tr th:nth-child(11),
+        .count-table thead tr th:nth-child(12),
+        .count-table thead tr th:nth-child(13){
+            width: 123px;
+        }
+
+        .count-table tbody tr td:nth-child(1){
+            width: 141px;
+        }
+        .count-table tbody tr td:nth-child(2),
+        .count-table tbody tr td:nth-child(3),
+        .count-table tbody tr td:nth-child(4),
+        .count-table tbody tr td:nth-child(5),
+        .count-table tbody tr td:nth-child(6),
+        .count-table tbody tr td:nth-child(7),
+        .count-table tbody tr td:nth-child(8),
+        .count-table tbody tr td:nth-child(9),
+        .count-table tbody tr td:nth-child(10),
+        .count-table tbody tr td:nth-child(11),
+        .count-table tbody tr td:nth-child(12),
+        .count-table tbody tr td:nth-child(13){
+            width: 123px;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height:6px;
+        }
+        ::-webkit-scrollbar-track-piece{
+            background-color: #eee;
+            margin: -2px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: #aaa;
+            min-height: 150px;
+            min-width: 150px;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:vertical:hover{
+            background: #555555;
+        }
+        ::-webkit-scrollbar-thumb:horizontal:hover{
+            background: #555555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="count-table">
+        <table>
+            <caption>信息统计表</caption>
+            <thead>
+            <tr>
+                <th>单位</th>
+                <th>平台发现执法问题</th>
+                <th>平台自动推送督办</th>
+                <th>平台推送整改反馈</th>
+                <th>平台推送整改反馈率</th>
+                <th>总部启动督办数</th>
+                <th>总部确认反馈整改</th>
+                <th>总部启动督办整改反馈率</th>
+                <th>分部启动督办</th>
+                <th>分部确认整改</th>
+                <th>分部启动督办整改反馈率</th>
+                <th>督办中</th>
+                <th>倒查自纠</th>
+                <th>平台闭环</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            <tr>
+                <td>XXXX分部</td>
+                <td>39563</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>6</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>6</td>
+                <td>8675</td>
+                <td>8675</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
