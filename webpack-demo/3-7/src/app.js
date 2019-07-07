@@ -6,7 +6,7 @@ setInterval(function () {
     if(flag){
         base.unuse();
     } else {
-        base.user();
+        base.use();
     }
     flag = !flag;
 },500);
