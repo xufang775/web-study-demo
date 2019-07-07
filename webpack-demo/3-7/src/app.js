@@ -1,12 +1,14 @@
-import base from './css/base.css'
-import common from './css/common.css'
+import base from './less/base.less'
+import common from './less/common.less'
 
-var flag = false;
-setInterval(function () {
-    if(flag){
-        base.unuse();
-    } else {
-        base.use();
-    }
-    flag = !flag;
-},500);
+var app = document.getElementById('app');
+app.innerHTML = `<div class="${base.box}"></div>`;
+// var flag = false;
+// setInterval(function () {
+//     if(flag){
+//         base.unuse();
+//     } else {
+//         base.use();
+//     }
+//     flag = !flag;
+// },500);
