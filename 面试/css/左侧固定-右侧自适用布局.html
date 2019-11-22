@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右侧固定-右侧自适用布局</title>
+    <style>
+        /*body{margin: 0;}*/
+        .page,
+        .page>div{height: 300px}
+        .page{ clear: both;}
+        .left{background: pink; width: 200px;}
+        .right{background: papayawhip;}
+
+        .left1{float: left;}
+        .right1{margin-left: 200px;}
+
+        .right2{float: right; width: calc(100vw - 35px - 200px)}
+        .right3{display: flow-root;}
+        .right4{display: flex;}
+
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <h1>float+margin</h1>
+    <div class="left left1">左侧</div>
+    <div class="right right1">右侧</div>
+</div>
+
+
+<div class="page">
+    <h1>float + cacl()计算宽度</h1>
+    <div class="left left1">左侧</div>
+    <div class="right right2">右侧</div>
+</div>
+
+<div class="page">
+    <h1>float + overflow</h1>
+    <div class="left left1">左侧</div>
+    <div class="right right3">右侧</div>
+</div>
+
+<div class="page">
+    <h1>float + flex</h1>
+    <div class="left left1">左侧</div>
+    <div class="right right4">右侧</div>
+</div>
+
+</body>
+</html>
