@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background: yellow;}
+    </style>
+    <script>
+        document.onclick=function () {
+            console.log('document点击');
+        }
+        window.onclick=function () {
+            console.log('window点击')
+        }
+    </script>
+</head>
+<body>
+<div onclick="console.log('div点击')">
+    <p onclick="console.log('p点击')">
+        <a href="#" onclick="console.log('a点击')">我是超链接</a>
+    </p>
+</div>
+</body>
+</html>

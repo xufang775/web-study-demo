@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .m-b-20{margin-bottom: 20px;}
+        .title{font-weight: bold; margin: 20px 0 10px;font-size: 19px;}
+
+        .defined-wh{
+            width: 100px;
+            height: 50px;
+
+            border: solid 1px red;
+            background: yellow;
+        }
+
+        .broken{
+            border: solid 1px red;
+            background: yellow;
+        }
+
+        .existed{
+            margin: 20px;
+            padding: 20px;
+            border: solid 1px red;
+            background: yellow;
+            background-clip: content-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="margin-bottom: 20px;">
+        <div class="title">行级盒子width/height不起作用。。。</div>
+
+        <div>对于block-level box</div>
+        <div class="defined-wh m-b-20"></div>
+        <div>对于：inline-level box</div>
+        <span class="defined-wh"></span>
+    </div>
+
+    <div style="margin-bottom: 20px; width: 250px;">
+        <div class="title">行级盒子被挤断了。。。</div>
+        <div>对于block-level box</div>
+        <div class="broken m-b-20">一段文字一段文字一段文字一段文字一段文字一段文字</div>
+        <div>对于：inline-level box</div>
+        <span class="broken">一段文字一段文字一段文字一段文字一段文字一段文字</span>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <div class="title">行级盒子怎么不占空间了？怎么刷存在感啊。。。</div>
+        <div>对于block-level box</div>
+        <div class="m-b-20">
+            <div>before bababababababa</div>
+            <div class="existed">babababababababababa</div>
+            <div>after bababababababa</div>
+        </div>
+
+
+        <div>对于：inline-level box</div>
+        <div>
+            <div>before bababababababa</div>
+            <span class="existed">babababababababababa</span>
+            <div>after bababababababa</div>
+        </div>
+    </div>
+
+</body>
+</html>

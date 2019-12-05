@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        .haha{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .haha_slide{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation:first 2s;
+        }
+        @keyframes first{
+        from:{width: 100px;}
+        to{width: 200px;}
+        }
+    </style>
+</head>
+<body>
+<div class="haha"></div>
+<script type="text/javascript">
+    var canrun = true;
+    var t = document.getElementsByClassName('haha');
+    t[0].onclick = function(){
+        // t[0].style.animationName = "null";
+        t[0].className = "haha_slide";
+        setTimeout(function(){
+            var t = document.getElementsByClassName('haha_slide');
+            t[0].className="haha";
+        },2000);
+    }
+</script>
+</body>
+</html>

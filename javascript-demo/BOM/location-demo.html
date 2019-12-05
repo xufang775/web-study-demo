@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location Demo</title>
+    <script type="text/javascript">
+        let hash = location.hash;
+        console.log("location.hash="+location.hash);
+        console.log("location.host="+location.host);   // 主机名与当前端口
+        console.log("location.hostname="+location.hostname);   // 主机名与当前端口
+        console.log("location.href="+location.href);   // 主机名与当前端口
+        console.log("location.pathname="+location.pathname);   // 主机名与当前端口
+        console.log("location.port="+location.port);   // 主机名与当前端口
+        console.log("location.protocol="+location.protocol);   // 主机名与当前端口
+        console.log("location.search="+location.search);   // 主机名与当前端口
+
+        console.log("history.length = "+history.length);
+        console.log("history.state = "+history.state);
+    </script>
+</head>
+<body>
+    <div id="hash"></div>
+    <button onclick="location.reload()">location.assign()</button>
+    <button onclick="location.replace('http://baidu.com')">location.replace()</button>
+    <button onclick="location.assign('http://baidu.com')">location.assign()</button>
+</body>
+</html>

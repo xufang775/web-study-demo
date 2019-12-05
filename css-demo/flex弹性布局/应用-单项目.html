@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单项目</title>
+    <style>
+        section{
+            display: flex;
+            background: palegreen;
+            width: 400px;
+            margin: 20px;
+            height: 200px;
+        }
+        span{
+            background: white;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .left{float: left}
+        .clear{clear: both;}
+
+        .flex-container{
+            display: flex;
+            background: palegreen;
+            width: 700px;
+            margin: 20px;
+            height: 200px;
+        }
+        .flex-item{
+            background: white;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>单项目</h1>
+<h4>justify-content: xxx</h4>
+<div class="left">
+    <section>
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: center;">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: flex-end;">
+        <span>1</span>
+    </section>
+</div>
+
+<div class="clear"></div>
+<h4>flex-direction:column;</h4>
+<h4>justify-content: xxx</h4>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-start;">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: center;">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-end;">
+        <span>1</span>
+    </section>
+</div>
+
+
+<div class="clear"></div>
+<h4>justify-content: flex-start</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style="justify-content: flex-start;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: flex-start;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: flex-start;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+
+<div class="clear"></div>
+<h4>justify-content: center</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style="justify-content: center;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: center;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: center;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+
+<div class="clear"></div>
+<h4>justify-content: flex-end</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style="justify-content: flex-end;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: flex-end;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="justify-content: flex-end;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+<!--========================================================================-->
+<div class="clear"></div>
+<h4>flex-direction: column;</h4>
+<h4>justify-content: flex-start</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style=" flex-direction: column;justify-content: flex-start;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-start;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-start;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+
+<div class="clear"></div>
+<h4>flex-direction: column;</h4>
+<h4>justify-content: center</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style="flex-direction:column;justify-content: center;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction:column;justify-content: center;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction:column;justify-content: center;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+
+<div class="clear"></div>
+<h4>flex-direction: column;</h4>
+<h4>justify-content: flex-end</h4>
+<h4>align-items: xxx</h4>
+<div class="left">
+    <section style="flex-direction: column; justify-content: flex-end;align-items: flex-start">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-end;align-items: center">
+        <span>1</span>
+    </section>
+</div>
+<div class="left">
+    <section style="flex-direction: column;justify-content: flex-end;align-items: flex-end">
+        <span>1</span>
+    </section>
+</div>
+
+
+</body>
+</html>

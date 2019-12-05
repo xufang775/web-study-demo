@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定的底栏</title>
+    <style>
+        .site{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .site-content{flex: 1;background: yellowgreen;}
+        header{background: yellow;}
+        footer{background: palegreen;}
+    </style>
+</head>
+<body class="site">
+    <header>
+        <h2>头部</h2>
+    </header>
+    <div class="site-content">
+        <h2>主体</h2>
+        <div>
+            <h3>布局说明</h3>
+            <ul>
+                <li>此布局，头部和底部不设置固定高度，只根据内容填充</li>
+                <li>主体部分：flex:1</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <h2>底部</h2>
+    </footer>
+</body>
+</html>

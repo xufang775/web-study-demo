@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单项目</title>
+    <style>
+        section{
+            display: flex;
+            background: palegreen;
+            width: 300px;
+            margin: 5px 10px;
+            height: 200px;
+        }
+        span{
+            background: white;
+            width: 40px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .left{float: left}
+        .clear{clear: both;}
+
+
+    </style>
+</head>
+<body>
+
+<h1>双项目</h1>
+<!--==============================================================================-->
+<div>
+    <h4>justify-content: flex-start | flex-end | center | space-between | space-around;</h4>
+    <div class="left">
+        <div>默认（flex-start）</div>
+        <section>
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: center;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: flex-end;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-between</div>
+        <section style="justify-content: space-between;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-around</div>
+        <section style="justify-content: space-around;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-evenly</div>
+        <section style="justify-content: space-evenly;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+</div>
+
+<!--==============================================================================-->
+<div class="clear"></div>
+<div>
+    <h4>flex-direction:column;</h4>
+    <h4>justify-content: flex-start | flex-end | center | space-between | space-around;</h4>
+    <div class="left">
+        <div>默认（flex-start）</div>
+        <section>
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="flex-direction: column; justify-content: center;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="flex-direction: column;justify-content: flex-end;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-between</div>
+        <section style="flex-direction: column;justify-content: space-between;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-around</div>
+        <section style="flex-direction: column;justify-content: space-around;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>space-evenly</div>
+        <section style="flex-direction: column;justify-content: space-evenly;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+</div>
+
+<!--==============================================================================-->
+<div class="clear"></div>
+<div>
+    <h4>justify-content: flex-start</h4>
+    <h4>align-items: flex-start | flex-end | center | baseline | stretch;</h4>
+    <div class="left">
+        <div>flex-start</div>
+        <section style="justify-content: flex-start;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: flex-start;align-items: center">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: flex-start;align-items: flex-end">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>baseline</div>
+        <section style="justify-content: flex-start;align-items: baseline">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: flex-start;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+
+</div>
+<!--==============================================================================-->
+
+
+<div class="clear"></div>
+<div>
+    <h4>justify-content: flex-end</h4>
+    <h4>align-items: flex-start | flex-end | center | baseline | stretch;</h4>
+    <div class="left">
+        <div>flex-start</div>
+        <section style="justify-content: flex-end;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: flex-end;align-items: center">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: flex-end;align-items: flex-end">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>baseline</div>
+        <section style="justify-content: flex-end;align-items: baseline">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: flex-end;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+</div>
+<!--==============================================================================-->
+
+
+<div class="clear"></div>
+<div>
+    <h4>justify-content: center</h4>
+    <h4>align-items: flex-start | flex-end | center | baseline | stretch;</h4>
+    <div class="left">
+        <div>flex-start</div>
+        <section style="justify-content: center;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: center;align-items: center">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: center;align-items: flex-end">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>baseline</div>
+        <section style="justify-content: center;align-items: baseline">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: center;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+</div>
+<!--==============================================================================-->
+
+
+<div class="clear"></div>
+<div>
+    <h4>justify-content: space-between</h4>
+    <h4>align-items: flex-start | flex-end | center | baseline | stretch;</h4>
+    <div class="left">
+        <div>flex-start</div>
+        <section style="justify-content: space-between;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: space-between;align-items: center">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: space-between;align-items: flex-end">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>baseline</div>
+        <section style="justify-content: space-between;align-items: baseline">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: space-between;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+</div>
+<!--==============================================================================-->
+
+
+
+
+<div>
+    <div class="clear"></div>
+    <h4>justify-content: space-between</h4>
+    <h4>align-items: flex-start | flex-end | center | baseline | stretch;</h4>
+    <div class="left">
+        <div>space-around</div>
+        <section style="justify-content: space-around;">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>center</div>
+        <section style="justify-content: space-around;align-items: center">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>flex-end</div>
+        <section style="justify-content: space-around;align-items: flex-end">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>baseline</div>
+        <section style="justify-content: space-around;align-items: baseline">
+            <span>1</span>
+            <span>2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: space-around;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+</div>
+<!--==============================================================================-->
+
+
+<div>
+    <div class="clear"></div>
+    <div class="left">
+        <div>父：flex-start； 子2：align-self: center</div>
+        <section>
+            <span>1</span>
+            <span style="align-self: center;">2</span>
+        </section>
+    </div>
+
+    <div class="left">
+        <div>父：justify-content: flex-end； 子2：align-self: center</div>
+        <section style="justify-content: flex-end">
+            <span>1</span>
+            <span style="align-self: center;">2</span>
+        </section>
+    </div>
+
+    <div class="left">
+        <div>center</div>
+        <section>
+            <span>1</span>
+            <span style="align-self: flex-end;">2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>父：space-between； 子2：flex-end</div>
+        <section style="justify-content: space-between;">
+            <span>1</span>
+            <span style="align-self: flex-end">2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>父：space-around； 子2：flex-end</div>
+        <section style="justify-content: space-around;">
+            <span>1</span>
+            <span style="align-self: flex-end">2</span>
+        </section>
+    </div>
+    <div class="left">
+        <div>stretch（默认）</div>
+        <section style="justify-content: space-around;">
+            <span>1</span>
+            <span style="height: auto;">2</span>
+        </section>
+    </div>
+</div>
+<!--==============================================================================-->
+
+
+
+</body>
+</html>

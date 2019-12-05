@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin: 20px;
+            height: 200px;
+            background: palegreen;
+        }
+        .box2{margin: 20px;height: 100px;
+            background: palevioletred;}
+        .wrap{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<h2>BCF特性</h2>
+<h3>同一个BFC中，两个相邻的box之间，margin会发生重叠</h3>
+<h4>同级元素之间重叠</h4>
+<div class="box">div1</div>
+<div class="box">div2</div>
+<h4>父子元素之间重叠</h4>
+<div class="box">
+    <div class="box2">div2</div>
+</div>
+
+<h2>利用BFC消除重叠</h2>
+<h3>添加一个只做BCF容器的div,将两个div分别放置到不同的BFC中</h3>
+<h4>同级元素之间重叠</h4>
+<div class="box">div1</div>
+<div class="wrap">
+    <div class="box">div2</div>
+</div>
+
+<h4>父子元素之间重叠</h4>
+<div class="box">
+    <div class="wrap">
+    <div class="box2">div2</div>
+    </div>
+</div>
+
+
+</body>
+</html>

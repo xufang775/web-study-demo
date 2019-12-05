@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>蚂蚁部落</title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #box{
+            width:400px;
+            height:400px;
+            background-color:blue;
+        }
+        #middle{
+            height:200px;
+            width:200px;
+            background-color:green;
+        }
+        #inner{
+            height:50px;
+            width:50px;
+            background-color:red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            console.log(event);
+
+            let obox=document.getElementById("box");
+            let omiddle=document.getElementById("middle");
+            let oinner=document.getElementById("inner");
+
+            // obox.addEventListener("click",function(){console.log("box")},true);
+            // omiddle.addEventListener("click",function(){console.log("middle")},true);
+            // oinner.addEventListener("click",function(){console.log("inner")},true);
+            // // 输出结构：box，middle，inner
+
+
+            obox.addEventListener("click",function(ev){
+                console.log("box")
+                console.log(event.target.id);
+                console.log(ev.target.id);
+            },false);
+            omiddle.addEventListener("click",function(ev){
+                console.log("middle");
+                console.log(event.target.id);
+                console.log(ev.target.id);
+            },false);
+            oinner.addEventListener("click",function(ev){
+                console.log("inner")
+                console.log(event.target.id);
+                console.log(ev.target.id);
+            },false);
+            // 输出结构：inner，middle，box
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="middle">
+        <div id="inner">inner</div>
+        middle
+    </div>
+    box
+</div>
+</body>
+</html>

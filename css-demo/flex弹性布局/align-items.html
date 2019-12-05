@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-items</title>
+    <style>
+        /*body>div:not(:first-child){display: inline-block}*/
+
+        .flex-container{
+            display: flex;
+            background: palegreen;
+            width: 700px;
+            margin: 20px;
+            height: 200px;
+        }
+        .flex-item{
+            background: white;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        li{line-height: 30px;}
+    </style>
+</head>
+<body>
+<div>
+<h1>align-items</h1>
+<ol>
+    <li>align-items属性是定义项目在交叉轴的对齐方式</li>
+    <li>align-items是以项目为基本单元，以轴线为容器</li>
+    <li>
+        <ul>
+            <li>flex-start</li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>baseline</li>
+            <li>stretch（默认）</li>
+        </ul>
+    </li>
+</ol>
+</div>
+
+<div>
+    <h3>flex-start</h3>
+    <div class="flex-container" style="align-items: flex-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>flex-end</h3>
+    <div class="flex-container" style="align-items: flex-end">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>center</h3>
+    <div class="flex-container" style="align-items: center">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>baseline：项目的第一行文字的基线对齐</h3>
+    <div class="flex-container" style="align-items: baseline">
+        <div class="flex-item">1</div>
+        <div class="flex-item">
+            <h4>44444</h4>222
+        </div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">
+            我是一个好人
+        </div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>stretch:如果项目未设置高度或设为auto，将占满整个容器的高度。</h3>
+    <div class="flex-container" style="align-items: stretch">
+        <div class="flex-item" style="height: auto">1</div>
+        <div class="flex-item" style="height: auto">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+<h2>应用</h2>
+
+<h3>利用此属性设计左右布局</h3>
+<div class="flex-container">
+    <div class="flex-item" style="height: auto;width: 20%;">左侧</div>
+    <div class="flex-item" style="height: auto;flex: 1;">右侧</div>
+</div>
+
+<h3>利用此属性设计左-右(上下 )布局, 利用 align-items: stretch</h3>
+<div class="flex-container">
+    <div class="flex-item" style="height: auto;width: 20%;">左侧</div>
+    <div class="flex-item flex-container" style="height: auto;flex: 1; flex-direction: column; padding: 0; background:none;">
+        <div style="height: 20px; width: auto;" class="flex-item">上</div>
+        <div class="flex-item" style="flex: 1; width: auto;">下</div>
+    </div>
+</div>
+
+<h3>利用此属性设计上-下(左右 )布局, 利用 align-items: stretch</h3>
+<div class="flex-container" style="flex-direction: column">
+    <div class="flex-item" style="height: 20%; width: auto;">上</div>
+    <div class="flex-item flex-container" style="flex: 1; padding: 0; background:none;width: auto;">
+        <div style="height: auto; width: 20px;" class="flex-item">左</div>
+        <div class="flex-item" style="flex: 1; height: auto; align-items: stretch">右</div>
+    </div>
+</div>
+
+<h3>div居中</h3>
+    <div class="flex-container" style="align-items: center;justify-content:center;">
+        <div class="flex-item"></div>
+    </div>
+</body>
+</html>

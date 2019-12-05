@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+                // console.log(xmlhttp);
+            } else {
+                // IE5或者IE6 中完成AJAX请求的对象
+                xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xmlhttp.onreadystatechange = function () {
+                console.log(xmlhttp.readyState,xmlhttp);
+                if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    document.getElementById('show').innerHTML = xmlhttp.responseText;
+                    document.getElementById('header').innerText = xmlhttp.getAllResponseHeaders();
+                    console.log(xmlhttp.getAllResponseHeaders());
+                }
+            }
+            // GET
+            // xmlhttp.open('GET','../data/ajax-demo.txt',true);
+            // xmlhttp.open('GET','http://127.0.0.1:8888/',true);
+            // xmlhttp.send();
+
+            // POST
+            xmlhttp.open('POST','http://127.0.0.1:8888/',true);
+            // xmlhttp.open('POST','http://127.0.0.1:8888/',false);
+            xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            xmlhttp.send('name=xufang&age=23');
+
+        }
+        window.onload=function () {
+            var obt = document.getElementById('bt');
+            obt.onclick = function () {
+                loadXMLDoc();
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="show">
+    <h2>原来的内容</h2>
+</div>
+<div id="header">11</div>
+<input type="button" id="bt" value="查看效果"/>
+</body>
+</html>

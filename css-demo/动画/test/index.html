@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>css-keyframes</title>
+    <style>
+        @-webkit-keyframes move{    /*定义名为move的动画函数 目前chrome对其支持较好 所以加-webkit-前缀*/
+            0%{                       /*时间达到0%时坐标位置为（0,0）*/
+                transform:translate(0px,0px);/*应用该动画的标签位置为（0,0）*/
+            }
+            20%{
+                transform:translate(100px,80px);
+            }
+            50%{
+                transform:translate(200px,0px);
+            }
+            100%{
+                transform:translate(400px,80px);
+            }
+        }
+        div {
+            width: 300px;
+            height: 100px;
+            background: blue;
+            border:1px solid red;
+            margin: 20px 100px;
+        }
+        span{
+            display:inline-block;
+            width:20px;
+            height:20px;
+            border-radius:10px;
+            background:yellow;
+            -webkit-animation-name:move;/*调用move动画*/
+            -webkit-animation-duration:10s;/*move动画从0%到100%的用时，单位为s*/
+            -webkit-animation-timing-function:ease;/*表示动画播放方式 ease（速度由快到慢）linear（恒定速度）ease-in(加速变化
+
+) ease-out(减速变化) ease-in-out(先加速在减速)*/
+            -webkit-animation-direction:normal;/*表示动画播放方向  normal（默认从0%到100%） alternate(偶数次从0%到100%，基数
+
+次100%到0%)*/
+            -webkit-animation-delay:2s;/*动画延时2秒播放*/
+            -webkit-animation-iteration-count:infinite;/*动画播放的次数  infinite表示无限次*/
+            -webkit-animation-play-state:running;/*播放还是paused*/
+            -webkit-animation-fill-mode:none;/*定义动画开始之前和结束之后发生的操作 none（动画结束时返回第一帧） forwards(动
+
+画结束后显示最后一帧) backwards（元素应用动画样式时迅速应用动画的第一帧） both（元素动画同时具有forwards和
+
+backwards效果）*/
+
+        }
+    </style>
+</head>
+<body>
+<div><span></span></div>
+</body>
+</html>

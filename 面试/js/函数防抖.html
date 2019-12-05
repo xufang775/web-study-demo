@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数防抖</title>
+    <script>
+        function debounce(fn, wait) {
+            var timeout = null;      //定义一个定时器
+            return function() {
+                if(timeout !== null)
+                    clearTimeout(timeout);  //清除这个定时器
+                timeout = setTimeout(fn, wait);
+            }
+        }
+        // 处理函数
+        function handle() {
+            console.log(Math.random());
+        }
+        
+        function btnClick() {
+            debounce(function () {
+                console.log('btn click  11111')
+            },1000)
+            console.log('btn click')
+        }
+        // 滚动事件
+        window.addEventListener('scroll', debounce(handle, 1000));
+    </script>
+</head>
+<body>
+    <div style="height: 2000px;">
+        防着演示
+        <button id="btn">防抖演示</button>
+    </div>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.onclick = debounce(function () {
+            console.log('245666')
+        },1000)
+        // btn.addEventListener('click',function () {
+        //     console.log(13222)
+        // })
+
+    </script>
+</body>
+</html>

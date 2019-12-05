@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            left: 0px;
+            transition: left 2s;
+        }
+    </style>
+</head>
+<body>
+<div id="box"
+</div>
+<script type="text/javascript">
+    var t = document.getElementById('box');
+    t.onclick = function(){
+        t.style.left = 100+"px";//第一帧
+        setTimeout(function(){
+            t.style.transitionProperty = "width";
+            t.style.width=200+"px"; //第二帧
+            setTimeout(function(){
+                t.style.transitionProperty = "left,width";
+                t.style.left=300+"px";//第三帧
+                t.style.width=100+"px";
+            },2000)
+        },2000);
+    }
+</script>
+</body>
+</html>

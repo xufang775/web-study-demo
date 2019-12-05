@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-items</title>
+    <style>
+        /*body>div:not(:first-child){display: inline-block}*/
+
+        .flex-container{
+            display: flex;
+            background: palegreen;
+            width: 1000px;
+            margin: 20px;
+            height: 200px;
+        }
+        .flex-item{
+            background: white;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .w50{width: 50px;}
+        .w100{width: 100px;}
+        .wrap{flex-wrap: wrap;}
+    </style>
+</head>
+<body>
+<div>
+    <h1>justify-content</h1>
+    <ol>
+        <li>justify-content属性是定义项目在主轴的对齐方式</li>
+        <li>justify-content是以项目为基本单元，以轴线为容器</li>
+        <li>当只一根轴线时，justify-content与justify-items作用相同</li>
+        <li>当项目的总宽度大于容器的总宽度，而又不换行的情况下，则子项目均分容器宽度</li>
+        <li>
+            <ul>
+                <li>flex-start（默认）</li>
+                <li>flex-end</li>
+                <li>center</li>
+                <li>space-between</li>
+                <li>space-around</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<h2>不换行（flex-wrap不设置或 flex-wrap:nowrap）</h2>
+<div>
+    <h3>flex-start</h3>
+    <div class="flex-container" style="justify-content: flex-start">
+        <div class="flex-item w50">1</div>
+        <div class="flex-item w50">2</div>
+        <div class="flex-item w50">3</div>
+        <div class="flex-item w50">4</div>
+        <div class="flex-item w50">5</div>
+        <div class="flex-item w50">6</div>
+        <div class="flex-item w50">7</div>
+        <div class="flex-item w50">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>flex-end</h3>
+    <div class="flex-container" style="justify-content: flex-end">
+        <div class="flex-item w50">1</div>
+        <div class="flex-item w50">2</div>
+        <div class="flex-item w50">3</div>
+        <div class="flex-item w50">4</div>
+        <div class="flex-item w50">5</div>
+        <div class="flex-item w50">6</div>
+        <div class="flex-item w50">7</div>
+        <div class="flex-item w50">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>center</h3>
+    <div class="flex-container" style="justify-content: center">
+        <div class="flex-item w50">1</div>
+        <div class="flex-item w50">2</div>
+        <div class="flex-item w50">3</div>
+        <div class="flex-item w50">4</div>
+        <div class="flex-item w50">5</div>
+        <div class="flex-item w50">6</div>
+        <div class="flex-item w50">7</div>
+        <div class="flex-item w50">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-between</h3>
+    <div class="flex-container" style="justify-content: space-between">
+        <div class="flex-item w50">1</div>
+        <div class="flex-item w50">2</div>
+        <div class="flex-item w50">3</div>
+        <div class="flex-item w50">4</div>
+        <div class="flex-item w50">5</div>
+        <div class="flex-item w50">6</div>
+        <div class="flex-item w50">7</div>
+        <div class="flex-item w50">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-around:</h3>
+    <div class="flex-container" style="justify-content: space-around">
+        <div class="flex-item w50">1</div>
+        <div class="flex-item w50">2</div>
+        <div class="flex-item w50">3</div>
+        <div class="flex-item w50">4</div>
+        <div class="flex-item w50">5</div>
+        <div class="flex-item w50">6</div>
+        <div class="flex-item w50">7</div>
+        <div class="flex-item w50">8</div>
+    </div>
+</div>
+
+
+
+<h2>不换行（flex-wrap不设置或 flex-wrap:nowrap）</h2>
+<h2>子项目总宽度>容器总宽度，子项目均分宽度</h2>
+<div>
+    <h3>flex-start</h3>
+    <div class="flex-container" style="justify-content: flex-start">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>flex-end</h3>
+    <div class="flex-container" style="justify-content: flex-end">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>center</h3>
+    <div class="flex-container" style="justify-content: center">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-between</h3>
+    <div class="flex-container" style="justify-content: space-between">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-around:</h3>
+    <div class="flex-container" style="justify-content: space-around">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+<!--===============================================================================-->
+
+<h2>换行（flex-wrap:wrap）</h2>
+<h2>子项目总宽度>容器总宽度，多余子项目进入下一行</h2>
+<div>
+    <h3>flex-start</h3>
+    <div class="flex-container wrap" style="justify-content: flex-start">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>flex-end</h3>
+    <div class="flex-container wrap" style="justify-content: flex-end">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>center</h3>
+    <div class="flex-container wrap" style="justify-content: center">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-between</h3>
+    <div class="flex-container wrap" style="justify-content: space-between">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+<div>
+    <h3>space-around:</h3>
+    <div class="flex-container wrap" style="justify-content: space-around">
+        <div class="flex-item w100">1</div>
+        <div class="flex-item w100">2</div>
+        <div class="flex-item w100">3</div>
+        <div class="flex-item w100">4</div>
+        <div class="flex-item w100">5</div>
+        <div class="flex-item w100">6</div>
+        <div class="flex-item w100">7</div>
+        <div class="flex-item w100">8</div>
+    </div>
+</div>
+
+
+</body>
+</html>

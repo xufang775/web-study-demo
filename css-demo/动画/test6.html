@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @keyframes frames{
+            0%{
+                left: 100px;
+            }
+            40%{
+                left: 150px;
+            }
+            60%{
+                left: 75px;
+            }
+            100%{
+                left: 100px;
+            }
+        }
+        div{
+            background-color: #ddd;
+            border: 1px solid black;
+            position: absolute;
+            left: 100px;
+            width: 60px;
+            height: 60px;
+        }
+        div:hover{
+            animation-name: frames;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

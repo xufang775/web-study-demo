@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数节流</title>
+    <script>
+        var throttle = function(func, delay) {
+            var timer = null;
+            var startTime = Date.now();  //设置开始时间
+            return function() {
+                var curTime = Date.now();
+                var remaining = delay - (curTime - startTime);  //剩余时间
+                var context = this;
+                var args = arguments;
+                clearTimeout(timer);
+                if (remaining <= 0) {      // 第一次触发立即执行
+                    func.apply(context, args);
+                    startTime = Date.now();
+                } else {
+                    timer = setTimeout(func, remaining);   //取消当前计数器并计算新的remaining
+                }
+            }
+        }
+        function handle() {
+            console.log(Math.random());
+        }
+        window.addEventListener('scroll', throttle(handle, 1000));
+        // window.addEventListener('scroll', handle);
+    </script>
+</head>
+<body style="height: 2000px;">
+
+</body>
+</html>

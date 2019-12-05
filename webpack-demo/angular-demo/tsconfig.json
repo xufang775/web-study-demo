@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",  // 重要
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "importHelpers": true,
+    "strictNullChecks": false,
+    "lib": ["dom","es2015"],
+    "baseUrl": "./src",
+    "paths": {
+      "@angular/*":["./node_modules/@angular/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

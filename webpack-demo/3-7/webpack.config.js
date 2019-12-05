@@ -33,8 +33,8 @@ module.exports = {
                       // loader:'file-loader',
                       loader:'css-loader',
                       options:{
-                          // minimize:true,
-                          modules:true,
+                          minimize:true,
+                          // modules:true,
                           // localIdentName: '[name]---[local]---[hash:base64:5]'
                           // localIdentName:'[path][name]__[local]--[hash:base64:5]'
                       }

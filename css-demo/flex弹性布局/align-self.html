@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-self</title>
+    <style>
+        /*body>div:not(:first-child){display: inline-block}*/
+
+        .flex-container{
+            display: flex;
+            background: palegreen;
+            width: 700px;
+            margin: 20px;
+            height: 200px;
+        }
+        .flex-item{
+            background: white;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        li{line-height: 30px;}
+    </style>
+</head>
+<body>
+<div>
+    <h1>align-self</h1>
+    <ol>
+        <li>align-self是flex项目的属性</li>
+        <li>align-items是以项目为基本单元，以轴线为容器</li>
+        <li>
+            <ul>
+                <li>auto（默认）</li>
+                <li>flex-start</li>
+                <li>flex-end</li>
+                <li>center</li>
+                <li>baseline</li>
+                <li>stretch</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<div>
+    <h3>父：align-items:flex-start</h3>
+    <h3>子（第2个）：align-self:flex-end</h3>
+    <h3>子（第3个）：align-self:center</h3>
+    <h3>子（第4个）：align-self:stretch; height:auto;</h3>
+    <div class="flex-container" style="align-items: flex-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item" style="align-self: flex-end">2</div>
+        <div class="flex-item" style="align-self: center;">3</div>
+        <div class="flex-item" style="align-self: stretch; height: auto;">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+    </div>
+</div>
+
+<div>
+    <h3>flex-end</h3>
+    <div class="flex-container" style="align-items: flex-end">
+        <div class="flex-item" style="align-self: flex-start;">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item" style="align-self: stretch;height: auto;">8</div>
+    </div>
+</div>
+
+</body>
+</html>
