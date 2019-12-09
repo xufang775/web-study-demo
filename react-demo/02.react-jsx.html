@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    // 在jsx中嵌入表达式
+    const name = 'Josh Perez'
+    const element = (
+        <h1 className="greeting">
+            Hello, world!
+        </h1>
+    );
+
+
+    function Welcome(props) {
+        return <h2>你好啊，{props.name}</h2>
+    }
+
+    class App extends React.Component{
+        render(){
+            return  (
+                <div>
+                    <Welcome name="xiaoxiao"></Welcome>
+                    <Welcome name="xiaoming"></Welcome>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(element, document.getElementById("root"))
+</script>
+</body>
+</html>
