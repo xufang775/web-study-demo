@@ -12,29 +12,94 @@
 <script type="text/babel">
     // 在jsx中嵌入表达式
     const name = 'Josh Perez'
-    const element = (
+    const element =(
         <h1 className="greeting">
-            Hello, world!
+            Hello, {name}!
         </h1>
+        )
+    ;
+    // 在jsx中调用函数
+    function formatName(user) {
+        return user.firstName + ' ' + user.lastName;
+    }
+    const user = {
+        firstName: 'Fang',
+        lastName:'Xu'
+    }
+    const element2 = (
+        <h1>
+            hello,{formatName(user)}
+        </h1>
+    )
+
+    // jsx333
+    const element3 = (
+        <div>
+            Hello xufang
+        </div>
     );
 
+    const element4 = React.createElement(
+        'div',
+        null,
+        'Hello xufang',
+        "几乎"
+    )
+    /*
+    <div>
+        <ul>
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+        </ul>
+    </div>
 
-    function Welcome(props) {
-        return <h2>你好啊，{props.name}</h2>
-    }
 
-    class App extends React.Component{
-        render(){
-            return  (
-                <div>
-                    <Welcome name="xiaoxiao"></Welcome>
-                    <Welcome name="xiaoming"></Welcome>
-                </div>
+     */
+
+    const element5 = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'ul',
+            null,
+            React.createElement(
+                'li',
+                null,
+                '11111'
+            ),
+            React.createElement(
+                'li',
+                null,
+                '2222'
+            ),
+            React.createElement(
+                'li',
+                null,
+                '3333'
             )
+        )
+    )
+    console.log(element3)
+    console.log(element4)
+
+    // jsx也是一个表达式
+    function getGreeting(user) {
+        if(user){
+            return <h1>hello, {formatName(user)}</h1>
         }
+        return <h1>hello,Stranger.</h1>
     }
 
-    ReactDOM.render(element, document.getElementById("root"))
+    // jsx 特定属性
+    // 你可以通过使用引号，来将属性值指定为字符串字面量
+
+
+
+    ReactDOM.render(getGreeting(user), document.getElementById("root"),function () {
+        console.log(22342)
+    })
+
 </script>
 </body>
 </html>
