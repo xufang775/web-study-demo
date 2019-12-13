@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React - 路由</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class App extends React.Component {
+            render(){
+                return <Toolbar theme="dark" />
+            }
+        }
+        function Toolbar(props){
+            return (
+                <div>
+                    <ThemedButton theme={props.theme} />
+                </div>
+            )
+        }
+
+        class ThemedButton extends React.Component{
+            render(){
+                return <button>{this.props.theme}</button>
+            }
+        }
+
+         ReactDOM.render(
+             <App/>,
+             document.getElementById('root')
+         );
+
+    </script>
+</body>
+</html>
